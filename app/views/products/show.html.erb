@@ -2,6 +2,6 @@
 
 	<% @product.prices.each do |prices| %>
 	<% if prices.current? %>
-		<p><%= number_to_currency(prices.price, :unit => "£ ") %> - <%= prices.shop.name %> </p>
+		<p><%= number_to_currency(prices.price, :unit => "£ ") %> - <%= prices.shop.name %> | <%= prices.last_update %> </p>
 		<% end %>
 	<% end %>

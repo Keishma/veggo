@@ -3,7 +3,7 @@ class Product < ApplicationRecord
 	has_many :shops,  through:  :prices
 
 	def full_title
-		title
+		(brand + ' ' + title).split.map(&:capitalize)*' '
 	end
 
 end

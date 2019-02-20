@@ -8,9 +8,16 @@ class PricesController < ApplicationController
   	@price = Price.new(price_params)
   	
   	if @price.save
-  		flash[:success] = "Price saved"
+  		@shop = params[:price][:shop_id]
+  		
+  		@product = params[:price][:product_id]
+
+  		@old = Price.where(product_id: 1).where(shop_id: 1).last(2)[0]
+  		@old.current = true
+  		@old.save
+
+  		flash[:success] = "Price saved - Shop:#{@shop} Product:#{@product}/ old price = #{@old.price}"
   		redirect_to @price
-  		#@old_price = Price.last(2)[0].current
 
   	else
   		redirect_to new_price_path, notice: 'failed'
@@ -19,7 +26,7 @@ class PricesController < ApplicationController
   end
 
   def show
-  	
+  	@price = Price.where(product_id: 1).where(shop_id: 1).last
   end
 
   private
