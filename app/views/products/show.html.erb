@@ -1,0 +1,7 @@
+<h2><%= @product.full_title %> </h2>
+
+	<% @product.prices.each do |prices| %>
+	<% if prices.current? %>
+		<p><%= number_to_currency(prices.price, :unit => "£ ") %> - <%= prices.shop.name %> </p>
+		<% end %>
+	<% end %>
