@@ -6,4 +6,8 @@ class Product < ApplicationRecord
 		(brand + ' ' + title).split.map(&:capitalize)*' '
 	end
 
+	def self.search(search)
+  		where("title LIKE ? OR brand LIKE ?", "%#{search}%", "%#{search}%") 
+	end
+
 end

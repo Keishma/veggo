@@ -2,6 +2,11 @@ class ProductsController < ApplicationController
 
   def index
   	@products = Product.all
+
+    if params[:search]
+      @products = Product.search(params[:search])
+    end
+
   end
 
   def show
@@ -21,6 +26,10 @@ class ProductsController < ApplicationController
   		redirect_to new_product_path, notice: 'failed'
   	end
 
+  end
+
+  def search
+    # @query = 
   end
 
   private

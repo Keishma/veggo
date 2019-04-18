@@ -1,7 +1,14 @@
 class PricesController < ApplicationController
 
   def new
- 	  @price = Price.new
+      @price = Price.new
+      
+      if(params.has_key?(:id))
+        putsx "here"
+        @product = Product.find(params[:id])
+      else
+        @product = false
+      end
   end
 
   def create
@@ -13,8 +20,9 @@ class PricesController < ApplicationController
       set_last
   		flash[:success] = "Price saved - id: #{@price.id} ||"
   		redirect_to @price
-  	else
-  		redirect_to new_price_path, notice: 'failed'
+  	elsif @price.errors.any?
+              error = @price.errors.full_messages[0]
+  		    redirect_to new_price_path, notice: error
   	end
 
   end
