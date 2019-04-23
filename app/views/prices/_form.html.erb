@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <%= if @product = false %>
-        <p>false</p>
-  <%= end %>
-
   <div class="field">
     <%= form.label :product_id %>
     <%= form.collection_select :product_id, Product.all, :id, :full_title, { prompt: true }, value: 1 %>
