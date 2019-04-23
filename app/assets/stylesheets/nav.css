@@ -1,3 +1,12 @@
 .form-inline {
 	flex-flow: row;
 }
+
+body { 
+    padding-top: 65px;
+    background: #f7f7f7;
+}
+
+#search-form {
+	display: flex;
+}

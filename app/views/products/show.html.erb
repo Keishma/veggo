@@ -1,9 +1,11 @@
-<h2><%= @product.full_title %> </h2>
-	<% @product.prices.each do |prices| %>
-	<% if prices.current? %>
-		<p><%= number_to_currency(prices.price, :unit => "£ ") %> - <%= prices.shop.name %> | <%= prices.last_update %> </p>
+<div class="container-fluid">
+	<h2><%= @product.full_title %> </h2>
+		<% @product.prices.each do |prices| %>
+		<% if prices.current? %>
+			<p><%= number_to_currency(prices.price, :unit => "£ ") %> - <%= prices.shop.name %> | <%= prices.last_update %> </p>
+			<% end %>
 		<% end %>
-	<% end %>
 
-<%= link_to "Add Price", new_price_path(id: @product.id) %>
+	<%= link_to "Add Price", new_price_path(id: @product.id), class: 'btn btn-success' %>
+</div>
 
