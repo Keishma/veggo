@@ -27,10 +27,7 @@ class ProductsController < ApplicationController
   	end
 
   end
-
-  def search
-    # @query = 
-  end
+  
 
   private
 

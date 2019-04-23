@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :prices
+
   resources :products
   # get 'products/index'
   # get 'products/new'
@@ -7,8 +8,9 @@ Rails.application.routes.draw do
   # get 'products', to: 'products#index'
   # get 'products/:id', to: 'products#show', as: :product
   # get 'products/new'
+
   get 'pages/home'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'pages#home'
+  root to: 'products#index'
 end
