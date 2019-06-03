@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
 	has_many :prices
 	has_many :shops,  through:  :prices
+	validates :title, :brand, :quantity, presence: true
 
 	def full_title
 		(brand + ' ' + title).split.map(&:capitalize)*' '
@@ -11,3 +12,4 @@ class Product < ApplicationRecord
 	end
 
 end
+ 

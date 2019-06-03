@@ -22,9 +22,11 @@ class ProductsController < ApplicationController
   	if @product.save
       flash[:success] = "Product saved"
   		redirect_to @product
-  	else
-  		redirect_to new_product_path, notice: 'failed'
-  	end
+    elsif @product.errors.any?
+              error = @product.errors.full_messages[0]
+          redirect_to new_product_path
+          flash[:danger] = error
+    end
 
   end
   
@@ -36,3 +38,4 @@ class ProductsController < ApplicationController
   end
 
 end
+ 

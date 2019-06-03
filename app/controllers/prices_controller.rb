@@ -6,8 +6,6 @@ class PricesController < ApplicationController
       @price = Price.new(product_id: product_id)
       
       if(params.has_key?(:id))
-        putsx "here"
-        putsx product_id
         @product = Product.find(params[:id])
       else
         @product = false

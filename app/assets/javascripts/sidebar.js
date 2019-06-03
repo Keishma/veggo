@@ -1,7 +1,4 @@
-$(document).ready(function () {
-        $("#sidebar").mCustomScrollbar({
-            theme: "minimal"
-        });
+document.addEventListener("turbolinks:load", function() {
 
         $('#dismiss, .overlay').on('click', function () {
             $('#sidebar').removeClass('active');
@@ -15,3 +12,14 @@ $(document).ready(function () {
             $('a[aria-expanded=true]').attr('aria-expanded', 'false');
         });
     });
+
+    //   $(document).ready(function () {
+    //     $('#sidebarCollapse').on('click', function () {
+    //         alert("ya cunt");
+    //     });
+    // });
+
+
+    // $('#sidebarCollapse').on('click', function () {
+    //     console.log("hello");
+    // });
