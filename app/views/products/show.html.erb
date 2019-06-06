@@ -1,5 +1,8 @@
 <div class="container-fluid">
 	<h2><%= @product.full_title %> </h2>
+		<% if @product.image.attached? %>
+			<%= image_tag url_for(@product.image) %>
+		<% end %>
 		<% @product.prices.each do |prices| %>
 		<% if prices.current? %>
 			<p><%= number_to_currency(prices.price, :unit => "£ ") %> - <%= prices.shop.name %> | <%= prices.last_update %> </p>
