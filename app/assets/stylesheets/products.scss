@@ -1,3 +1,45 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-box {
+	display: flex;
+    margin-bottom: -15px;
+
+}
+
+.product-img {
+	width: 100%;
+}
+
+.product-info {
+	width: 66.66%;
+}
+
+.product-price {
+	width: 70%;
+    min-height: 96px;
+}
+
+.product-action {
+	width: 30%;
+}
+
+.product-price .btn {
+	background-color: transparent!important;
+}
+
+.product-price .btn-success {
+    color: #06841c;
+    background-color: transparent;
+    border-color: #28a745;
+    border: 2px solid #28a745;
+    width: 100px;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.p-img-cont {
+    width: 33.33%;
+}

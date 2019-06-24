@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid p-1">
 
 <div class="row">
 	<div class="col">
@@ -6,26 +6,43 @@
 	</div>
 </div>
 
-<div class="row mx-auto mt-3 p-3 text-center">
+<div class="row mx-auto mt-4 text-center">
 	<% @products.each do |product| %>
 
-			<div class="col-sm-4 border p-3 my-1 bg-white">
+			<div class="col-sm-4 border p-2 my-1 bg-white">
 					<div class="product-box">
-						<h3><%= link_to product.full_title, product %></h3>
-						<h6><%= product.quantity %></h6>
-
-						<% product.prices.where(:current => 1).order(:price).limit(1).each do |prices| %>
-								<h4 class="btn-success"><%= number_to_currency(prices.price, :unit => "£ ") %> </h4> <p> <%= prices.shop.name %> | <%= prices.last_update %> </p>
+						<%= link_to product, class: 'flex p-img-cont' do %>
+							<div class="product-img">
+								<% if product.image.attached? %>
+									<%= image_tag url_for(product.image) %>
+								<% end %>
+							</div>
 						<% end %>
 
-						<%= link_to "View", product, class: 'btn btn-primary' %>
-						<%= link_to "+ Add Price", new_price_path(id: product.id), class: 'btn btn-secondary' %>							
+
+							<div class="product-info">
+								<h3><%= link_to product.full_title, product %></h3>
+								<div class="product-info-sub flex">
+									<div class="product-price">
+										<h6><%= product.quantity %></h6>
+
+										<% product.prices.where(:current => 1).order(:price).limit(1).each do |prices| %>
+												<h4 class="btn-success"><%= number_to_currency(prices.price, :unit => "£ ") %> </h4> 
+												<p class="text-small"> <%= prices.shop.name %> | <%= prices.last_update %> </p>
+										<% end %>
+									</div>
+									<div class="product-action pl-1">
+										<%= link_to "View", product, class: 'full-width btn btn-primary mb-1' %>
+										<%= link_to "+ £", new_price_path(id: product.id), class: 'full-width btn btn-secondary' %>							
+									</div>
+								</div>
+							</div>
+
 
 					</div>
 			</div>
 
 	<% end %>
-
 </div>
 
 </div>

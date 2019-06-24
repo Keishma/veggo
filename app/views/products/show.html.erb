@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-4 pt-3">
 	<h2><%= @product.full_title %> </h2>
 		<% if @product.image.attached? %>
 			<%= image_tag url_for(@product.image) %>
@@ -10,5 +10,6 @@
 		<% end %>
 
 	<%= link_to "Add Price", new_price_path(id: @product.id), class: 'btn btn-success' %>
+	<%= link_to "Edit Product", edit_product_path(id: @product.id), class: 'btn btn-secondary' %>
 </div>
 

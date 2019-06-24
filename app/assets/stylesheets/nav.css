@@ -7,7 +7,7 @@
 }
 
 body { 
-    padding-top: 65px;
+    padding-top: 70px;
     background: #f7f7f7;
 }
 
@@ -39,10 +39,7 @@ body {
 	background: #05841D!important;
 }
 
-.btn-primary {
-	background: #075D6A!important;
-	border-color: #075D6A!important;
-}
+
 
 .btn-black {
 	background: #555C5C!important;
