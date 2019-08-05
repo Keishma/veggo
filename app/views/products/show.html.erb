@@ -1,4 +1,4 @@
-<div class="container-fluid mt-4 pt-3">
+<div class="container-fluid">
 	<h2><%= @product.full_title %> </h2>
 		<% if @product.image.attached? %>
 			<%= image_tag url_for(@product.image) %>

@@ -36,8 +36,9 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    if @product.save
-      flash[:success] = "Product saved"
+    
+    if @product.update(product_params)
+      flash[:success] = "Product updated"
       redirect_to @product
     elsif @product.errors.any?
               error = @product.errors.full_messages[0]
