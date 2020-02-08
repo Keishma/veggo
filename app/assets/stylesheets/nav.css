@@ -1,0 +1,62 @@
+.form-inline {
+	flex-flow: row;
+	display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+body { 
+    padding-top: 90px;
+    background: #f7f7f7;
+}
+
+#search-form {
+	display: flex;
+	position: fixed;
+	z-index: 1030;
+	top: 48px;
+	width: 100%;
+    padding: 0 25px 5px 25px;
+    background: #05841D;
+}
+
+.navbar-toggler {
+	display: none;
+}
+
+#sidebarCollapse {
+	position: absolute;
+	left: 8px;
+}
+
+.navbar {
+	justify-content: center;
+	background: #05841D!important;
+}
+
+#sidebar, #sidebar ul li a:hover, #sidebar ul li.active > a, #dismiss {
+	background: #05841D!important;
+}
+
+
+
+.btn-black {
+	background: #555C5C!important;
+	border-color: #555C5C!important;
+}
+
+.btn-green {
+	background: #8AC324!important;
+}
+
+
+.btn-secondary { 
+	background: #147485!important;
+	border-color: #147485!important;
+}
+
+a, a:hover, a:active, a:focus {
+	color:unset;
+	text-decoration: none;
+}

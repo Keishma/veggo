@@ -6,8 +6,6 @@ class PricesController < ApplicationController
       @price = Price.new(product_id: product_id)
       
       if(params.has_key?(:id))
-        putsx "here"
-        putsx product_id
         @product = Product.find(params[:id])
       else
         @product = false
@@ -22,11 +20,12 @@ class PricesController < ApplicationController
 
   	if @price.save
       set_last
-  		flash[:success] = "Price saved - id: #{@price.id} ||"
-  		redirect_to @price
+  		flash[:success] = "Price saved"
+  		redirect_to products_path
   	elsif @price.errors.any?
               error = @price.errors.full_messages[0]
-  		    redirect_to new_price_path, notice: error
+  		    redirect_to new_price_path
+          flash[:danger] = error
   	end
 
   end

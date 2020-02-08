@@ -1,0 +1,15 @@
+<div class="form-inline">
+	<%= form_tag(products_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search Products..", :class => 'form-control' %>
+		<span class="input-group-btn">
+			<%= button_tag :submit, class: 'btn btn-green text-white flex' do %>
+			    <i class="fas fa-search fa-size"></i>
+			<% end %>
+    	</span>
+		<span class="input-group-btn">
+      		 <%= link_to  products_path, class: 'btn btn-black text-white flex' do %> 
+      		 	<i class="fas fa-times fa-size"></i>
+      		 <% end %>
+    	</span>    	
+	<% end %>
+</div>

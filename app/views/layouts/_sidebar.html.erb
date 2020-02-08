@@ -1,0 +1,28 @@
+<nav id="sidebar">
+    <div id="dismiss">
+        <i class="fas fa-times fa-lg"></i>
+    </div>
+    <ul class="list-unstyled components">
+<!--         <p>Veggo</p> -->
+        <li class="active">
+            <%= link_to Veggo, root_path, class: 'nav-link'%>
+        </li>
+        <li class="active">
+            <%= link_to 'Add Price', new_price_path, class: 'nav-link' %>
+        </li>
+        <li class="active">
+            <%= link_to 'View Products', products_path, class: 'nav-link' %>
+        </li>
+        <li class="active">
+            <%= link_to 'Add Product', new_product_path, class: 'nav-link' %>
+        </li>
+        <li class="active">
+            <%= link_to 'Add Shop', new_product_path, class: 'nav-link' %>
+        </li>
+        <li class="active">
+            <%= link_to 'Log In', user_session_path, class: 'nav-link' %>
+        </li>                
+    </ul>
+</nav>
+
+<div class="overlay"></div>

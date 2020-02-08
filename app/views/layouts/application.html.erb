@@ -7,12 +7,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <!-- jQuery Custom Scroller CDN -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   </head>
 
-  <body>
+  <body id="page-top">
+
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
+
+    <%= render 'layouts/navigation' %>
+    <%= render "products/search_bar" %>
+    <%= render 'layouts/sidebar' %>
+
     <%= yield %>
+
   </body>
+
 </html>

@@ -1,0 +1,35 @@
+$green: #05841D;
+$lightgreen: #8AC324;
+$grey: #555C5C;
+$blue: #075D6A;
+$lightblue: #147485;
+
+$small: 0.875em;
+$normal: 1em;
+$large: 1.43em;
+
+html, body {
+/*	font-size: 16px;*/
+}
+
+h3 {
+	font-size: $large;
+}
+
+.text-small {
+	font-size: $small;
+}
+
+.full-width {
+	width: 100%;
+}
+
+img {
+	width: 100%;
+}
+
+.btn-primary {
+	background-color: transparent;
+	border-color: $blue;
+	color: $blue;
+}

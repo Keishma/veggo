@@ -1,9 +1,51 @@
-<h1>List of Products</h1>
-<%= form_tag(products_path, :method => "get", id: "search-form") do %>
-	<%= text_field_tag :search, params[:search], placeholder: "Search Products.." %>
-	<%= submit_tag 'Search', :name => nil%>
-<% end %>
+<div class="container-fluid p-1">
 
-<% @products.each do |product| %>
-	<h3><%= link_to product.full_title, product %></h3>
-<% end %>
+<div class="row">
+	<div class="col">
+
+	</div>
+</div>
+
+<div class="row mx-auto mt-1 text-center">
+	<% @products.each do |product| %>
+
+			<div class="col-sm-4 border p-2 my-1 bg-white">
+					<div class="product-box">
+						<%= link_to product, class: 'flex p-img-cont' do %>
+							<div class="product-img">
+								<% if product.image.attached? %>
+									<%= image_tag url_for(product.image) %>
+								<% end %>
+							</div>
+						<% end %>
+
+
+							<div class="product-info">
+								<h3><%= link_to product.full_title, product %></h3>
+								<div class="product-info-sub flex">
+									<div class="product-price">
+										<h6><%= product.quantity %></h6>
+
+										<% product.prices.where(:current => 1).order(:price).limit(1).each do |prices| %>
+												<h4 class="btn-success"><%= number_to_currency(prices.price, :unit => "£ ") %> </h4> 
+												<p class="text-small"> <%= prices.shop.name %> | <%= prices.last_update %> </p>
+										<% end %>
+									</div>
+									<div class="product-action pl-1">
+										<%= link_to "View", product, class: 'full-width btn btn-primary mb-1' %>
+										<%= link_to "+ £", new_price_path(id: product.id), class: 'full-width btn btn-secondary' %>							
+									</div>
+								</div>
+							</div>
+
+
+					</div>
+			</div>
+
+	<% end %>
+</div>
+
+</div>
+
+</div>
+
