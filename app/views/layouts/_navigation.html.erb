@@ -1,7 +1,15 @@
+<%= request.original_fullpath %>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+	
+	<% unless current_page?(root_path) %>
+	<%= link_to '', 'javascript:history.back()', class: 'back-btn fas fa-arrow-left fa-size' %>
+	<% else %>
 	<button type="button" id="sidebarCollapse" class="btn text-white">
         <i class="fas fa-bars fa-size flex"></i>
-    </button>
+	</button>
+	<% end %>
+
+
 	<%= link_to "Vedje", root_path, class: 'navbar-brand'%>
 	 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 	 	<ul class="navbar-nav">

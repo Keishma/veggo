@@ -41,15 +41,15 @@ class PricesController < ApplicationController
       price_off(price_id,old_price)
   end
 
-  def putsy(block)
-    puts " #{block}"
-    puts "-------------------------"
-  end
+  # def putsy(block)
+  #   puts " #{block}"
+  #   puts "-------------------------"
+  # end
 
-  def putsx(block)
-    puts " xxx#{block}"
-    puts "-------------------------"
-  end
+  # def putsx(block)
+  #   puts " xxx#{block}"
+  #   puts "-------------------------"
+  # end
 
   def price_off(new_price,old_price)
       return if new_price === old_price.id
@@ -58,7 +58,8 @@ class PricesController < ApplicationController
   end
 
   def show
-  	@price = Price.where(product_id: 1).where(shop_id: 1).last
+    @price = Price.where(product_id: 1).where(shop_id: 1).last
+    
   end
 
   private

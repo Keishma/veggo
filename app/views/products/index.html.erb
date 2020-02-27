@@ -10,6 +10,9 @@
 	<% @products.each do |product| %>
 
 			<div class="col-sm-4 border p-2 my-1 bg-white">
+				<%= link_to product, class: 'flex p-img-cont' do %>
+					<div>test</div>
+				<% end %>
 					<div class="product-box">
 						<%= link_to product, class: 'flex p-img-cont' do %>
 							<div class="product-img">

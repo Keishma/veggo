@@ -60,3 +60,9 @@ a, a:hover, a:active, a:focus {
 	color:unset;
 	text-decoration: none;
 }
+
+.back-btn {
+    position: absolute;
+	left: 20px;
+	color: white!important;
+}

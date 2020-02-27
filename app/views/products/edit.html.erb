@@ -1,7 +1,4 @@
 <div class="container-fluid">
-	<p><%= @product %></p>
- 	<p> hello </p>
- 	<p> hello </p>
  	<p><%= product = @product %></p>
 	<%= form_with(model: product, local: true) do |form| %>
 	  <% if product.errors.any? %>

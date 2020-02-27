@@ -1,8 +1,18 @@
 class ProductsController < ApplicationController
 
+  def putsy(block)
+    puts "                         "
+    puts "-------------------------"
+    puts "                         "
+    puts " #{block}"
+    puts "                         "
+    puts "-------------------------"
+    puts "                         "
+  end
+
   def index
   	@products = Product.all
-
+    putsy 'somestufffffffffff'
     if params[:search]
       @products = Product.search(params[:search])
     end
@@ -16,7 +26,7 @@ class ProductsController < ApplicationController
   def new
  	  @product = Product.new
   end
-
+ 
   def edit
     @product = Product.find(params[:id])
   end
